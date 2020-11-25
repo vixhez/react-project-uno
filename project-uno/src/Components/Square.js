@@ -30,8 +30,12 @@ class Square extends React.Component
     }
 
     render() {
+        const { colour } = this.props;
         return (
-            <div onClick={ this.handleClick } style={ this.state.clicks % 2 === 0 ? {backgroundColor: 'hotpink', width: 200, height: 200 } : {backgroundColor: 'green', width: 200, height: 200 } }></div>
+            <div
+            onClick={this.handleClick}
+            style={{ backgroundColor: this.state.clicks % 2 === 0 ? "hotpink" : "green", width: 200, height: 200 }}>
+          </div>
         );
     }
 }
