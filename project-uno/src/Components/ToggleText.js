@@ -17,9 +17,11 @@ class ToggleText extends React.Component
     }
 
     render() {
+        const { initial, alternate } = this.props; 
+
         return (
             <>
-                <p>{ this.state.clicks % 2 === 0 ? "Hello" : "World" }</p>
+                <p>{ this.state.clicks % 2 === 0 ? initial : alternate }</p>
                 <button onClick={ this.handleClick }>Toggle</button>
             </>
         );

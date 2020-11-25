@@ -5,6 +5,9 @@ import People from "./People";
 import Clicked from "./Clicked";
 import ToggleText from "./ToggleText";
 import Counter from "./Counter";
+import StepCounter from "./StepCounter";
+import CatchMeIfYouCan from "./CatchMeIfYouCan";
+import RollCall from "./RollCall";
 
 const Stuff = ({ square }) => (
     <>
@@ -13,8 +16,12 @@ const Stuff = ({ square }) => (
         { square ? (<Square />) : null }
         <People names = { ["James P. Sullivan", "Mike Wazowski", "Boo", "Randall Boggs", "Roz", "Fungus"] } />
         <Clicked />
-        <ToggleText />
-        <Counter maxValue={100} />
+        <ToggleText initial="Hello" alternate="World" />
+        <Counter initialValue={ 50 } maxValue={ 100 } />
+        <StepCounter maxValue={ 100 } stepValue={ 5 } />
+        <br/>
+        <CatchMeIfYouCan jump={ 100 }/>
+        <RollCall names={ ["Yolanda Tulip", "Gillian Starlight", "William Shakespeare", "James Blake", "Harriet Coriander"] } />
     </>
     );
 

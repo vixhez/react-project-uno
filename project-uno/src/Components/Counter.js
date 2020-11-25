@@ -7,7 +7,7 @@ class Counter extends React.Component
     
 
         this.state = {
-            counter: 50,
+            counter: this.props.initialValue,
         };
 
     this.addClicks = this.addClicks.bind(this);
@@ -15,18 +15,17 @@ class Counter extends React.Component
     }
 
     addClicks() {
-        this.setState({ counter: this.state.counter + 1 });
+        this.setState({ counter: this.state.counter < this.props.maxValue ? this.state.counter + 1 : this.state.counter });
     }
 
     removeClicks() {
-        this.setState({ counter: this.state.counter - 1 });
+        this.setState({ counter: this.state.counter > 0 ? this.state.counter - 1 : this.state.counter });
     }
 
     render() {
-        let { maxValue } = this.props;
         return (
             <>
-                <p>{ this.state.counter > 0 && this.state.counter < maxValue ? this.state.counter : "You have gone too low/high! Correct yourself using the relevant button." }</p>
+                <p><b>Counter ~</b>{ this.state.counter }</p>
                 <button onClick ={ this.removeClicks }>-</button>
                 <button onClick={ this.addClicks }>+</button>
 
@@ -36,3 +35,7 @@ class Counter extends React.Component
 }
 
 export default Counter;
+
+
+
+// > 0 && this.state.counter < maxValue ? this.state.counter : "You have gone too low/high! Correct yourself using the relevant button." }
