@@ -8,6 +8,8 @@ import Counter from "./Counter";
 import StepCounter from "./StepCounter";
 import CatchMeIfYouCan from "./CatchMeIfYouCan";
 import RollCall from "./RollCall";
+import GodCounter from "./GodCounter";
+import TwoCounters from "./TwoCounters";
 
 const Stuff = ({ square }) => (
     <>
@@ -22,6 +24,8 @@ const Stuff = ({ square }) => (
         <br/>
         <CatchMeIfYouCan jump={ 100 }/>
         <RollCall names={ ["Yolanda Tulip", "Gillian Starlight", "William Shakespeare", "James Blake", "Harriet Coriander"] } />
+        <GodCounter />
+        <TwoCounters />
     </>
     );
 
